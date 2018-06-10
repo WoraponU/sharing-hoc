@@ -1,8 +1,11 @@
+import { WithLoading } from '../hocs'
+
 const ItemList = ({ listItems }) => {
   return (
     <ul>
-      { !listItems ? 'Loding' : listItems.map((listItem) => <li key={listItem}>{listItem}</li>) }
+      { listItems.map((listItem) => <li key={listItem}>{listItem}</li>) }
     </ul>
   )
 }
-export default ItemList
+
+export default WithLoading(ItemList)
