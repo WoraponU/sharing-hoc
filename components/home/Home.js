@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { ItemList } from './'
 
 class Home extends Component {
   state = {
@@ -20,9 +21,7 @@ class Home extends Component {
     return (
       <div>
         <h1>List of item:</h1>
-        <ul>
-          { !listItems ? 'Loding' : listItems.map((listItem) => <li key={listItem}>{listItem}</li>) }
-        </ul>
+        <ItemList listItems={listItems} />
       </div>
     );
   }
